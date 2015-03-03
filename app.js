@@ -9,9 +9,10 @@ var routes = require('./routes/index');
 var blogs = require('./routes/blogs');
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/blogApp', function(err) {
+//mongoose.connect('mongodb://localhost/blogApp', function(err) {
+mongoose.connect('mongodb://test:test@ds049181.mongolab.com:49181/blogapp', function(err) {
     if(err) {
-        console.log('connection error', err);
+        console.log('connection error here', err);
     } else {
         console.log('connection successful');
     }
