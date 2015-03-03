@@ -1,0 +1,56 @@
+
+<div>
+
+    <div class="blogHeader">
+    <input type="text" placeholder="SEARCH" ng-model="search.title">
+    <a style="display:inline;margin:20px;" ng-click="createNewBlog()">Create</a>
+    </div>
+    <div class="blogTableWrap">
+    <div class="emptyTableContent" ng-hide="blogs.length > 0">
+        <div class="emptyTableMessage">
+            No Blogs Available
+        </div>
+    </div>
+
+    <div ng-show="blogs.length > 0">
+
+    <table class="blog-table">
+        <thead>
+            <th>
+                Title
+            </th>
+            <th>
+                Author
+            </th>
+            <th>
+                Last Updated
+            </th>
+            <th>
+
+            </th>
+        </thead>
+
+        <tbody>
+            <tr ng-repeat="blog in blogs | filter: search">
+                <td>
+                   <a href="#/{{blog._id}}">{{blog.title}}</a>
+                </td>
+                <td>
+                    <span>{{blog.author}}</span>
+                </td>
+                <td>
+                    <span>{{blog.lastUpdated}}</span>
+                </td>
+                <td style="width:250px;">
+                    <button class="blog-table-btn btn btn-group-xs" ng-click="editBlog($index, blog._id)"class="glyphicon">edit</button>
+                    <button class="blog-table-btn btn bg-warning btn-group-xs" ng-click="remove($index)"class="glyphicon glyphicon-remove">remove</button>
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    </div>
+
+</div>
+
+</div>

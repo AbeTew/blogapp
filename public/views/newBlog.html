@@ -1,0 +1,22 @@
+<div class="blogDetailsTitle">Create New Blog</div>
+
+<dl >
+    <dt>Title:</dt>
+    <dd><input class="blogContentsTitle" ng-model="newBlogTitle"/></dd>
+
+    <dt>
+        Contents:
+    </dt>
+    <dd>
+        <textarea class="blogContentsTextArea" ng-model="newBlogContents"></textarea>
+    </dd>
+</dl>
+<button class="btn btn-primary" ng-click="save()">Save</button>
+<a class="btn" href="/">Cancel</a>
+<!--
+completed: <input type="checkbox" ng-model="blog.completed"><br>
+note: <textarea ng-model="blog.note"></textarea><br><br>
+
+<button ng-click="update()">update</button>
+<button ng-click="remove()">remove</button>
+-->
